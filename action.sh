@@ -38,4 +38,4 @@ git commit -am "$COMMIT_MESSAGE"
 CONTEXT=${INPUT_BRANCH-master}
 [ -z $CONTEXT ] && CONTEXT='master'
 
-git push -f -q https://x-access-token:${INPUT_TOKEN}@github.com/${REMOTE} $CONTEXT
+git push -f -q https://${INPUT_TOKEN}@github.com/${REMOTE} $CONTEXT
