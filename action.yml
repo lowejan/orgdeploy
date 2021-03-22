@@ -1,6 +1,6 @@
-name: 'Deploy Hugo to Remote'
-description: '🚀 Build and deploy a Hugo site to a remote repository with latest extended Hugo.'
-author: 'victoriadrake'
+name: 'Deploy Org Mode site to Remote'
+description: 'Build and deploy a Org Mode site to a remote repository.'
+author: 'lujok'
 branding:
   icon: 'send'
   color: 'blue'
