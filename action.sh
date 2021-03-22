@@ -12,6 +12,8 @@ else
     echo "No valid Org publish configuration file found. Stopping." && exit 1
 fi
 
+cd ${GITHUB_WORKSPACE}
+
 echo 'Clone remote repository'
 git clone https://github.com/${REMOTE} ${DEST}
 
