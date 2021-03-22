@@ -30,13 +30,13 @@ COMMIT_MESSAGE=${INPUT_COMMIT_MESSAGE}
 [ -z $COMMIT_MESSAGE ] && COMMIT_MESSAGE="Deploy with ${GITHUB_WORKFLOW}"
 
 cd ${DEST}
-git config user.name "${INPUT_USERNAME}"
-git config user.email "${INPUT_USERNAME}@users.noreply.github.com"
-git remote set-url origin https://${INPUT_TOKEN}@github.com/${REMOTE}
+git config user.name "${GITHUB_ACTOR}"
+git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+#git remote set-url origin https://${TOKEN}@github.com/${REMOTE}
 git add .
 git commit -am "$COMMIT_MESSAGE"
 
 CONTEXT=${INPUT_BRANCH-master}
 [ -z $CONTEXT ] && CONTEXT='master'
 
-git push -f -q origin $CONTEXT
+git push -f -q https://${TOKEN}@github.com/${REMOTE} $CONTEXT
