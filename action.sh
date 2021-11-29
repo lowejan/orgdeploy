@@ -27,7 +27,7 @@ emacs --batch --no-init-file --load publish.el --funcall org-publish-all
 
 echo 'Publish to remote repository'
 COMMIT_MESSAGE=${INPUT_COMMIT_MESSAGE}
-[ -z $COMMIT_MESSAGE ] && COMMIT_MESSAGE="Deploy with ${GITHUB_WORKFLOW}"
+[ -z $COMMIT_MESSAGE ] && COMMIT_MESSAGE="Updated: `date +'%Y-%m-%d %H:%M:%S'`"
 
 cd ${DEST}
 git config user.name "${GITHUB_ACTOR}"
